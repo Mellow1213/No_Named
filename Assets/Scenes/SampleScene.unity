@@ -188,7 +188,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 37dfc3fa0a22d594e98c9dc94ce95f7e,
         type: 3}
       propertyPath: m_Name
-      value: Y Bot@Idle
+      value: Dummy
       objectReference: {fileID: 0}
     - target: {fileID: 2484128538761520324, guid: 37dfc3fa0a22d594e98c9dc94ce95f7e,
         type: 3}
@@ -701,3 +701,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1930786912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 37dfc3fa0a22d594e98c9dc94ce95f7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 58568513}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1930786915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930786912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bfb599b86c467b4bba71cf3648ae0c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
