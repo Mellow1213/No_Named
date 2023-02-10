@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a963dfe7-485c-432f-a329-ef56dce9adeb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animator/Anim_Dummy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05. Animator/Anim_Dummy.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.No_Named/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.No_Named/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/06. Animations/Y Bot@Rib Hit.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06. Animations/Y Bot@Rib Hit.fbx.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676012755879</updated>
       <workItem from="1676012758676" duration="9000" />
-      <workItem from="1676012781708" duration="1394000" />
+      <workItem from="1676012781708" duration="2029000" />
     </task>
     <servers />
   </component>
