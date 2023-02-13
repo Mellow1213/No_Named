@@ -9,7 +9,7 @@ public class PlayerMoveController : MonoBehaviour
     public float MoveSpeed = 10.0f;
 
     [Tooltip("Move speed of the character in m/s")]
-    public float SprintSpeed = 20.0f;
+    public float SprintSpeed = 15.0f;
 
     // Player
     private CharacterController _controller;
