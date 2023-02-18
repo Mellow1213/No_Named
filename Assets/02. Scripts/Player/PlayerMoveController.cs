@@ -20,7 +20,8 @@ namespace InputSystemAssets
         [Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
         public float FallTimeout = 0.15f;
 
-        [Tooltip("Useful for rough ground")] public float GroundedOffset = -0.14f;
+        [Tooltip("Useful for rough ground")]
+        public float GroundedOffset = -0.14f;
 
         [Header("Player Grounded")]
         [Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
@@ -79,28 +80,21 @@ namespace InputSystemAssets
         private void Move()
         {
             float targetSpeed = _inputSystem.sprint ? SprintSpeed : MoveSpeed;
-            
+
             if (_inputSystem.move == Vector2.zero)
             {
                 targetSpeed = 0.0f;
             }
-            //
-            // Vector3 inputDirection = new Vector3(_inputSystem.move.x, 0.0f, _inputSystem.move.y).normalized;
-            //
-            // if (_inputSystem.move != Vector2.zero)
-            // {
-            //     // _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + 
-            // }
-            //
-            // Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
-            //
-            // _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
-            //                  new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
-            if (_inputSystem.move != Vector2.zero)
-            {
-                
-            }
+            Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+            Vector3 _moveDirection = new Vector3(_inputSystem.move.x, _verticalVelocity, _inputSystem.move.y);
+            
+            // _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
+            //                  new Vector3(_inputSystem.move.x, _verticalVelocity, _inputSystem.move.y) * Time.deltaTime);
+            
+            _moveDirection = transform.TransformDirection(_moveDirection).normalized * targetSpeed;
+            _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + _moveDirection * Time.deltaTime);
+
         }
 
         private void JumpAndGravity()
@@ -119,10 +113,10 @@ namespace InputSystemAssets
                 {
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
-                    if (_hasAnimator)
-                    {
-                        // 에니메이션
-                    }
+                    // if (_hasAnimator)
+                    // {
+                    //     에니메이션
+                    // }
                 }
 
                 if (_jumpTimeoutDelta >= 0.0f)
@@ -140,10 +134,10 @@ namespace InputSystemAssets
                 }
                 else
                 {
-                    if (_hasAnimator)
-                    {
-                        //에니메이션
-                    }
+                    // if (_hasAnimator)
+                    // {
+                    //     에니메이션
+                    // }
                 }
 
                 _inputSystem.jump = false;

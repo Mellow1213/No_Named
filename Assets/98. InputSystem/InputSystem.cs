@@ -7,9 +7,11 @@ namespace InputSystemAssets
     {
         [Header("Character Input Values")]
         public Vector2 move;
-
         public bool jump;
         public bool sprint;
+
+        [Header("Movement Settings")]
+        public bool analogMovement;
 
 
         public void OnMove(InputValue value)
@@ -38,7 +40,7 @@ namespace InputSystemAssets
             jump = newJumpState;
         }
 
-        private void SpintInput(bool newSprintState)
+        void SpintInput(bool newSprintState)
         {
             sprint = newSprintState;
         }
