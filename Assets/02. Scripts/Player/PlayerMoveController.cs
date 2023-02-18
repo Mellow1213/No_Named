@@ -85,15 +85,22 @@ namespace InputSystemAssets
             {
                 targetSpeed = 0.0f;
             }
+            
+            Vector3 inputDirection = new Vector3(_inputSystem.move.x, 0.0f, _inputSystem.move.y);
+            Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * inputDirection;
+            Vector3 verticalDirection = Vector3.up * _verticalVelocity;
 
-            Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
-            Vector3 _moveDirection = new Vector3(_inputSystem.move.x, _verticalVelocity, _inputSystem.move.y);
-            
-            // _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
-            //                  new Vector3(_inputSystem.move.x, _verticalVelocity, _inputSystem.move.y) * Time.deltaTime);
-            
-            _moveDirection = transform.TransformDirection(_moveDirection).normalized * targetSpeed;
-            _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + _moveDirection * Time.deltaTime);
+            _controller.Move(targetDirection.normalized * (targetSpeed * Time.deltaTime) + verticalDirection * Time.deltaTime);
+
+            // Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+            // Vector3 _moveDirection = new Vector3(_inputSystem.move.x, _verticalVelocity, _inputSystem.move.y);
+            //
+            // _moveDirection = transform.TransformDirection(_moveDirection).normalized * targetSpeed;
+            //
+            // _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + _moveDirection * Time.deltaTime);
+            //
+            // _moveDirection = transform.TransformDirection(_moveDirection).normalized * targetSpeed;
+            // _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + _moveDirection * Time.deltaTime);
 
         }
 
