@@ -112,7 +112,7 @@ namespace InputSystemAssets
                 if (_inputSystem.jump && _jumpTimeoutDelta <= 0.0f)
                 {
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-
+                    _jumpTimeoutDelta = JumpTimeout; // 수정된 부분
                     // if (_hasAnimator)
                     // {
                     //     에니메이션

@@ -4,8 +4,6 @@
     <list default="true" id="a963dfe7-485c-432f-a329-ef56dce9adeb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.No_Named/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.No_Named/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Player/PlayerMoveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Player/PlayerMoveController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/98. InputSystem/InputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/98. InputSystem/InputSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/98. InputSystem/InputSystem.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/98. InputSystem/InputSystem.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/99. Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99. Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,23 +19,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/joinho/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
-      "/Users/joinho/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
-      "/Users/joinho/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/joinho/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/joinho/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/joinho/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.17f1-arm64/Unity.app/Contents/MacOS/Unity" />
@@ -90,6 +88,7 @@
       <workItem from="1676509031110" duration="2000" />
       <workItem from="1676611340530" duration="3648000" />
       <workItem from="1676707698438" duration="7857000" />
+      <workItem from="1676732499451" duration="238000" />
     </task>
     <servers />
   </component>

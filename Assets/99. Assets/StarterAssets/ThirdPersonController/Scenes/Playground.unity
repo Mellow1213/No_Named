@@ -1378,7 +1378,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.94, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1402827283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1474,6 +1474,7 @@ MonoBehaviour:
   move: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  analogMovement: 0
 --- !u!114 &1415575498
 MonoBehaviour:
   m_ObjectHideFlags: 0
