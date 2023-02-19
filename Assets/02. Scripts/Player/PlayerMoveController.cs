@@ -42,7 +42,6 @@ namespace InputSystemAssets
         private InputSystem _inputSystem;
 
         private bool _hasAnimator;
-        private float _speed;
         private float _targetRotation = 0.0f;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
@@ -55,14 +54,13 @@ namespace InputSystemAssets
         void Start()
         {
             _controller = GetComponent<CharacterController>();
-            _hasAnimator = TryGetComponent(out _animator);
             _inputSystem = GetComponent<InputSystem>();
+            _hasAnimator = _animator != null;
         }
 
         // Update is called once per frame
         void Update()
         {
-            _hasAnimator = TryGetComponent(out _animator);
             JumpAndGravity();
             GroundedCheck();
             Move();
@@ -91,17 +89,7 @@ namespace InputSystemAssets
             Vector3 verticalDirection = Vector3.up * _verticalVelocity;
 
             _controller.Move(targetDirection.normalized * (targetSpeed * Time.deltaTime) + verticalDirection * Time.deltaTime);
-
-            // Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
-            // Vector3 _moveDirection = new Vector3(_inputSystem.move.x, _verticalVelocity, _inputSystem.move.y);
-            //
-            // _moveDirection = transform.TransformDirection(_moveDirection).normalized * targetSpeed;
-            //
-            // _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + _moveDirection * Time.deltaTime);
-            //
-            // _moveDirection = transform.TransformDirection(_moveDirection).normalized * targetSpeed;
-            // _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + _moveDirection * Time.deltaTime);
-
+            
         }
 
         private void JumpAndGravity()
@@ -119,7 +107,6 @@ namespace InputSystemAssets
                 if (_inputSystem.jump && _jumpTimeoutDelta <= 0.0f)
                 {
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-                    _jumpTimeoutDelta = JumpTimeout; // 수정된 부분
                     // if (_hasAnimator)
                     // {
                     //     에니메이션
