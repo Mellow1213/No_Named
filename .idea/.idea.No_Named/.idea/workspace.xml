@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a963dfe7-485c-432f-a329-ef56dce9adeb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.No_Named/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.No_Named/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99. Assets/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99. Assets/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Player/PlayerMoveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Player/PlayerMoveController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05. Animator/PlayerAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05. Animator/PlayerAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05. Animator/PlayerAnimator.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05. Animator/PlayerAnimator.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/98. InputSystem/InputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/98. InputSystem/InputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/99. Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99. Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +95,7 @@
       <workItem from="1676732499451" duration="704000" />
       <workItem from="1676736702583" duration="2173000" />
       <workItem from="1676807339341" duration="3295000" />
+      <workItem from="1676876774959" duration="5257000" />
     </task>
     <servers />
   </component>
