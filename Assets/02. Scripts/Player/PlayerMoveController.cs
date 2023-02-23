@@ -128,7 +128,9 @@ namespace InputSystemAssets
             
 
             _controller.Move(targetDirection.normalized * (targetSpeed * Time.deltaTime) + verticalDirection * Time.deltaTime);
-
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(targetDirection.normalized), Time.deltaTime * 30f);
+            
+            
             if (_hasAnimator)
             {
                 _animator.SetFloat(_animSpeed, _animationBlend);
