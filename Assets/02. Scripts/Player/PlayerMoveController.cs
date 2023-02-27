@@ -61,6 +61,9 @@ namespace InputSystemAssets
         private int _animFreeFall;
         private int _animMotionSpeed;
         
+        
+        
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -107,30 +110,38 @@ namespace InputSystemAssets
         // Player Move
         private void Move()
         {
+            Vector3 heading = Camera.main.transform.localRotation * Vector3.forward;
+            heading.y = 0;
+            heading = heading.normalized;
+            
             float targetSpeed = _inputSystem.sprint ? SprintSpeed : MoveSpeed;
-
+            
             if (_inputSystem.move == Vector2.zero)
             {
                 targetSpeed = 0.0f;
             }
             
-            Vector3 inputDirection = new Vector3(_inputSystem.move.x, 0.0f, _inputSystem.move.y);
-            Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * inputDirection;
+            //Vector3 inputDirection = new Vector3(_inputSystem.move.x, 0.0f, _inputSystem.move.y);
+            
+            
+            //Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * inputDirection;
+            
             Vector3 verticalDirection = Vector3.up * _verticalVelocity;
-
+            
+            Vector3 inputDirection = heading * (Time.deltaTime * _inputSystem.move.y * targetSpeed);                  // front move based on camera 
+            inputDirection += Quaternion.Euler(0, 90, 0) * heading * (Time.deltaTime * _inputSystem.move.x);    // side move based on camera
+            
+            _controller.Move(inputDirection.normalized * (targetSpeed * Time.deltaTime)     
+                                                        + verticalDirection * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(inputDirection.normalized), Time.deltaTime * 30f);
+            
+            
             _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * 10f);
             if (_animationBlend < 0.01f)
             {
                 _animationBlend = 0f;
             }
-            
             float inputMagnitude = _inputSystem.analogMovement ? _inputSystem.move.magnitude : 1f;
-            
-
-            _controller.Move(targetDirection.normalized * (targetSpeed * Time.deltaTime) + verticalDirection * Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(targetDirection.normalized), Time.deltaTime * 30f);
-            
-            
             if (_hasAnimator)
             {
                 _animator.SetFloat(_animSpeed, _animationBlend);
