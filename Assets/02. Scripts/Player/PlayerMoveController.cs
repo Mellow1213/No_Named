@@ -131,8 +131,7 @@ namespace InputSystemAssets
             Vector3 inputDirection = heading * (Time.deltaTime * _inputSystem.move.y * targetSpeed);                  // front move based on camera 
             inputDirection += Quaternion.Euler(0, 90, 0) * heading * (Time.deltaTime * _inputSystem.move.x);    // side move based on camera
             
-            _controller.Move(inputDirection.normalized * (targetSpeed * Time.deltaTime)     
-                                                        + verticalDirection * Time.deltaTime);
+            _controller.Move(inputDirection.normalized * (targetSpeed * Time.deltaTime) + verticalDirection * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(inputDirection.normalized), Time.deltaTime * 30f);
             
             
@@ -141,7 +140,9 @@ namespace InputSystemAssets
             {
                 _animationBlend = 0f;
             }
+            
             float inputMagnitude = _inputSystem.analogMovement ? _inputSystem.move.magnitude : 1f;
+            
             if (_hasAnimator)
             {
                 _animator.SetFloat(_animSpeed, _animationBlend);
