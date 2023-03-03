@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace InputSystemAssets
@@ -44,6 +45,8 @@ namespace InputSystemAssets
         private Animator _animator;
         private InputSystem _inputSystem;
         private float _animationBlend;
+        
+        private GameObject _mainCamera;
 
         private bool _hasAnimator;
         private float _targetRotation = 0.0f;
@@ -66,6 +69,7 @@ namespace InputSystemAssets
         {
             _controller = GetComponent<CharacterController>();
             _inputSystem = GetComponent<InputSystem>();
+            _animator = GetComponent<Animator>();
             _hasAnimator = TryGetComponent(out _animator);
             AnimationID();
         }
@@ -76,6 +80,22 @@ namespace InputSystemAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            
+            // TestCode
+            if (Input.GetKeyDown(KeyCode.F1))
+            {
+                Debug.Log("F1");
+                _animator.SetLayerWeight(0, 0.0f);
+                _animator.SetLayerWeight(1, 1.0f);
+            }
+
+            if (Input.GetKeyDown(KeyCode.F2))
+            {
+                Debug.Log("F2");
+                _animator.SetLayerWeight(0, 1.0f);
+                _animator.SetLayerWeight(1, 0.0f);
+            }
+            //
         }
         
         // Player AnimationID
@@ -116,11 +136,9 @@ namespace InputSystemAssets
             {
                 targetSpeed = 0.0f;
             }
-            
-            //Vector3 inputDirection = new Vector3(_inputSystem.move.x, 0.0f, _inputSystem.move.y);
-            
-            
-            //Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * inputDirection;
+
+            // Vector3 inputDirection = new Vector3(_inputSystem.move.x, 0.0f, _inputSystem.move.y);
+            // Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * inputDirection;
             
             Vector3 verticalDirection = Vector3.up * _verticalVelocity;
             
