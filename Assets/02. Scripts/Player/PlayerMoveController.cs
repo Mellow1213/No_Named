@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace InputSystemAssets
@@ -85,15 +84,13 @@ namespace InputSystemAssets
             if (Input.GetKeyDown(KeyCode.F1))
             {
                 Debug.Log("F1");
-                _animator.SetLayerWeight(0, 0.0f);
-                _animator.SetLayerWeight(1, 1.0f);
+                _animator.SetBool("W", true);
             }
 
             if (Input.GetKeyDown(KeyCode.F2))
             {
                 Debug.Log("F2");
-                _animator.SetLayerWeight(0, 1.0f);
-                _animator.SetLayerWeight(1, 0.0f);
+                _animator.SetBool("W", false);
             }
             //
         }
@@ -162,7 +159,6 @@ namespace InputSystemAssets
                 _animator.SetFloat(_animSpeed, _animationBlend);
                 _animator.SetFloat(_animMotionSpeed, inputMagnitude);
             }
-            
         }
         
         // Player Jump and Gravity
